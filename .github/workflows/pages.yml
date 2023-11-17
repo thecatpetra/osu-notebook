@@ -2,9 +2,12 @@
 name: Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["DotNet"]
+    branches: [main]
+    types: 
+      - completed
+
 
 jobs:
   # Build job
