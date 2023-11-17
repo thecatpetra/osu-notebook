@@ -9,15 +9,30 @@ on:
 jobs:
   # Build job
   build:
-    # <Not provided for brevity>
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
 
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Hello world
-        run: |
-          echo "Hello world"
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.100'
+
+      - name: Restore Tools
+        run: dotnet tool restore
+
+      - name: Paket Restore
+        run: dotnet paket restore
+
+      - name: Build
+        run: dotnet fable src --outDir bin/Build
+
+      - name: Move HTML
+        run: cp src/sources/index.html bin/Build/index.html
 
   # Deploy job
   deploy:

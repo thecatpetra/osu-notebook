@@ -1,0 +1,7 @@
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\bin\Release\net6.0\OsuNotebook.deps.json
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\bin\Release\net6.0\OsuNotebook.runtimeconfig.json
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\obj\Release\net6.0\OsuNotebook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\obj\Release\net6.0\OsuNotebook.AssemblyInfoInputs.cache
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\obj\Release\net6.0\OsuNotebook.AssemblyInfo.cs
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\obj\Release\net6.0\OsuNotebook.csproj.CopyComplete
+C:\Users\arthu\Documents\GitHub\osu-notebook\src\obj\Release\net6.0\OsuNotebook.genruntimeconfig.cache

@@ -1,0 +1,9 @@
+# Config for dotnet manifest
+.config/*
+
+# bin used for builds
+./bin/*
+
+# dotnet build 
+./src/bin
+./src/obj
