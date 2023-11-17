@@ -11,6 +11,9 @@ jobs:
   build:
     # <Not provided for brevity>
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
+
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Hello world
         run: |
