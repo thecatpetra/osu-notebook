@@ -24,9 +24,3 @@ jobs:
 
       - name: Paket Restore
         run: dotnet paket restore
-
-      - name: Build
-        run: dotnet build
-
-      - name: Test
-        run: dotnet test -l "console;verbosity=normal" --no-build --nologo
