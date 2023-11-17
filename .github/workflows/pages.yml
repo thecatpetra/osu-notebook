@@ -1,12 +1,7 @@
 
 name: Pages
 
-on:
-  workflow_run:
-    workflows: ["DotNet"]
-    branches: [main]
-    types: 
-      - completed
+on: [push, pull_request]
 
 
 jobs:
@@ -24,6 +19,12 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.100'
+
+      - name: Create tool manifest
+        run: dotnet new tool-manifest
+
+      - name: Download paket tool
+        run: dotnet tool install paket
 
       - name: Restore Tools
         run: dotnet tool restore
