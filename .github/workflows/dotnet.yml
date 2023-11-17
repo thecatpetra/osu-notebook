@@ -13,8 +13,10 @@ jobs:
         with:
           dotnet-version: '6.0.100'
 
-      - name: Download tool paket
+      - name: Create tool manifest
         run: dotnet new tool-manifest
+
+      - name: Download paket tool
         run: dotnet tool install paket
 
       - name: Restore Tools
