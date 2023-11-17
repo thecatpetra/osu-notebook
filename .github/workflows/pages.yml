@@ -11,8 +11,10 @@ jobs:
   build:
     # <Not provided for brevity>
     # At a minimum this job should upload artifacts using actions/upload-pages-artifact
-    run: |
-      echo "Hello world"
+    steps:
+      - name: Hello world
+        run: |
+          echo "Hello world"
 
   # Deploy job
   deploy:
