@@ -26,6 +26,9 @@ jobs:
       - name: Download paket tool
         run: dotnet tool install paket
 
+      - name: Download fable
+        run: dotnet tool install fable
+
       - name: Restore Tools
         run: dotnet tool restore
 
