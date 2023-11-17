@@ -41,6 +41,12 @@ jobs:
       - name: Move HTML
         run: cp src/sources/index.html bin/Build/index.html
 
+      - name: bin as artifact
+          uses: actions/upload-artifact@v3
+          with:
+            name: sources
+            path: bin
+
   # Deploy job
   deploy:
     # Add a dependency to the build job
