@@ -4,7 +4,7 @@ open Browser
 open Browser.Types
 open System.Collections.Generic
 
-let phrases = dict [
+let phrases = [
     "(554704354792177664)", "Я выжимал 270 раньше"
     "(554704354792177664)", "Играет карту в 67 акки"
     "(554704354792177664)", "Я половину дисита проходил"
@@ -93,9 +93,9 @@ let phrases = dict [
     "(1101460168039989279)", "нормальный фонк идет от 4*"
 ]
 
-let addPhrase (d: HTMLDivElement) (phrase : KeyValuePair<string, string>) = 
-    let author = phrase.Key
-    let phrase = phrase.Value
+let addPhrase (d: HTMLDivElement) (phrase : string * string) = 
+    let author = fst phrase
+    let phrase = snd phrase
     let phraseBox : HTMLDivElement = unbox document.createElement "div"
     let authorSpan : HTMLSpanElement = unbox document.createElement "span"
     let phraseSpan : HTMLSpanElement = unbox document.createElement "span"
