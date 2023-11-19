@@ -103,9 +103,10 @@ let addPhrase (d: HTMLDivElement) (phrase : string * string) =
     let author = fst phrase
     let phrase = snd phrase
 
-    if prevId = author then
+    if prevId <> author then
         let br = document.createElement "br"
         d.appendChild br |> ignore
+        prevId <- author
 
     let phraseBox : HTMLDivElement = unbox document.createElement "div"
     phraseBox.className <- "osu-card"
