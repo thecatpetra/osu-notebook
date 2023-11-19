@@ -124,7 +124,6 @@ let nicknames = [
 
 let mutable prevId = "";
 
-
 let modifyName (name : string) =
     "@" + name.Replace("(", "").Replace(")", "")
 
@@ -158,7 +157,8 @@ let main _ =
     let nicknamesDiv : HTMLDivElement = unbox document.getElementById "nicknames"
 
     let sortedPhrases = List.sortBy fst phrases
-    let sortedNicknames = List.sortBy fst phrases
+    let sortedNicknames = List.sortBy fst nicknames
+
     Seq.iter (addPhrase phrasesDiv) sortedPhrases
     Seq.iter (addPhrase nicknamesDiv) sortedNicknames
 
