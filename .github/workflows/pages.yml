@@ -41,6 +41,9 @@ jobs:
       - name: Move HTML
         run: cp src/sources/index.html build/index.html
 
+      - name: Move HTML
+        run: cp src/sources/index.css build/index.css
+
       - name: Artifact
         uses: actions/upload-artifact@v3
         with:
