@@ -95,6 +95,10 @@ let phrases = [
 
 let mutable prevId = "";
 
+
+let modifyName (name : string) =
+    "@" + name.Replace("(", "").Replace(")", "")
+
 let addPhrase (d: HTMLDivElement) (phrase : string * string) = 
     let author = fst phrase
     let phrase = snd phrase
@@ -109,7 +113,7 @@ let addPhrase (d: HTMLDivElement) (phrase : string * string) =
     let authorSpan : HTMLSpanElement = unbox document.createElement "span"
     let phraseSpan : HTMLSpanElement = unbox document.createElement "span"
 
-    authorSpan.textContent <- author
+    authorSpan.textContent <- modifyName author
     phraseSpan.textContent <- phrase
 
     phraseBox.appendChild authorSpan |> ignore
