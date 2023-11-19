@@ -41,6 +41,14 @@ jobs:
       - name: Move HTML
         run: cp src/sources/index.html bin/Build/index.html
 
+      - name: Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: page
+          path: build
+          if-no-files-found: error
+
+
   # Deploy job
   deploy:
     # Add a dependency to the build job
@@ -59,12 +67,14 @@ jobs:
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
-      - name: bin as artifact
-        uses: actions/upload-artifact@v3
+      - uses: actions/download-artifact@master
         with:
-          name: sources
-          path: bin
-
+          name: page
+          path: .
+      - uses: actions/configure-pages@v1
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 # or the latest "vX.X.X" version tag for this action
