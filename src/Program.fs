@@ -93,6 +93,35 @@ let phrases = [
     "(1101460168039989279)", "нормальный фонк идет от 4*"
 ]
 
+
+let nicknames = [
+    "         ?        ", "!70пп помойка"
+    "623818798155431938", "типа осер"
+    "428092030867079168", "6 digit hyilo"
+    "943742708453867570", "учусь играть"
+    "852584479493980180", "Химера!?"
+    "775288226646720512", "osu!ждаю 2007"
+    "285042291109003264", "дайте реквесты"
+    "830405950363533355", "осу хуета"
+    "583728824672321538", "0pp v osu"
+    "482881435795980288", "ничего не сыграна osu"
+    "715659920539648123", "без вутинга"
+    "420986387861471233", "tabletenjoyer"
+    "159706429245095936", "осер и битмарь"
+    "695928502632972289", "просто играю в осу"
+    "897935682914361355", "подвальный мирами"
+    "268752193354465280", "ценитель фонка Elwand"
+    "478752139699552268", "noob v osu"
+    "715943616849248279", "клавиатурный насильник"
+    "420986387861471233", "rx player"
+    "695928502632972289", "учусь играть в осу с RX)"
+    "716976820846592011", "999999999999pp"
+    "852584479493980180", "OSU МОЯ ЖИЗНЬ"
+    "981345633308921886", "go multi 1v1"
+    "790756038973849610", "# 500пп #какжать180"
+    "488995663795978241", "# КАК ИГРАТЬ ДТ ТАП ИКСОМ"
+]
+
 let mutable prevId = "";
 
 
@@ -126,7 +155,11 @@ let addPhrase (d: HTMLDivElement) (phrase : string * string) =
 [<EntryPoint>]
 let main _ =
     let phrasesDiv : HTMLDivElement = unbox document.getElementById "phrases"
+    let nicknamesDiv : HTMLDivElement = unbox document.getElementById "nicknames"
 
-    let entries = Seq.iter (addPhrase phrasesDiv) phrases 
+    let sortedPhrases = List.sortBy fst phrases
+    let sortedNicknames = List.sortBy fst phrases
+    Seq.iter (addPhrase phrasesDiv) sortedPhrases
+    Seq.iter (addPhrase nicknamesDiv) sortedNicknames
 
     0 (* Ok *)
