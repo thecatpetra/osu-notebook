@@ -7,3 +7,6 @@
 # dotnet build 
 ./src/bin
 ./src/obj
+
+# Build folder
+./build/*

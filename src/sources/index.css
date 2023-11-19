@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    background-color: #10101c;
+    color: #ffffff;
+    font-size: 150%; 
+    font-family: 'Roboto', sans-serif;
+}
+
+#main-page {
+    display: grid;
+    gap: 100px;
+}
+
+.osu-card {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #20202c;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+}
