@@ -2,7 +2,7 @@
 
 open Browser
 open Browser.Types
-open System.Collections.Generic
+open System
 
 let phrases = [
     "(554704354792177664)", "Я выжимал 270 раньше"
@@ -151,6 +151,23 @@ let addPhrase (d: HTMLDivElement) (phrase : string * string) =
     d.appendChild phraseBox |> ignore
 
 
+let showRandomPhrase _ =
+    let phrase = phrases[(new Random()).Next() % phrases.Length]
+    let author = fst phrase |> modifyName
+    let phrase = snd phrase
+    let authorholder : HTMLSpanElement = unbox document.getElementById "random-phrase-author-span"
+    let phraseholder : HTMLSpanElement = unbox document.getElementById "random-phrase-span"
+    let dialog : HTMLDialogElement = unbox document.getElementById "random-phrase-dialog"
+    authorholder.innerText <- author
+    phraseholder.innerText <- phrase
+    dialog.show()
+
+
+let registerRandomButton () =
+    let btn : HTMLButtonElement = unbox document.getElementById "random-phrase-button"
+    btn.onclick <- showRandomPhrase
+
+
 [<EntryPoint>]
 let main _ =
     let phrasesDiv : HTMLDivElement = unbox document.getElementById "phrases"
@@ -161,5 +178,7 @@ let main _ =
 
     Seq.iter (addPhrase phrasesDiv) sortedPhrases
     Seq.iter (addPhrase nicknamesDiv) sortedNicknames
+
+    registerRandomButton ()
 
     0 (* Ok *)

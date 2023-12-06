@@ -9,10 +9,27 @@
     <title>osu! notebook</title>
     <link href="index.css" rel="stylesheet">
 </head>
-<body>
+<body>    
+    <dialog closed id="random-phrase-dialog"  class="random-dialog">
+        <h3 class="random-header">Случайная фраза</h3>
+        <span id="random-phrase-author-span" class="random-phrase"></span>
+        <br><br>
+        <span id="random-phrase-span"  class="random-phrase"></span>
+        <br><br>
+        <div class="right">
+            <form method="dialog">
+                <button class="random-phrase-button">OK</button>
+            </form>
+        </div>
+    </dialog>  
     <div id="main-page">
+        <div class="cnt">
         <h1 class="cnt">TheCatPetra's Osu notebook</h1>
+        </div>
         <h3 class="cnt">Фразы осеров</h3>
+        <div class="button-panel">
+            <button class="random-phrase-button" id="random-phrase-button"> Случайная Фраза </button>
+        </div>
         <div id="phrases"></div>
         <h3 class="cnt">Ники осеров</h3>
         <div id="nicknames"></div>

@@ -22,3 +22,60 @@ body {
 .cnt {
     text-align: center;
 }
+
+.right {
+    text-align: right;
+}
+
+
+.osu-template {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #20202c;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    border-style: solid;
+}
+
+.random-phrase {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #20202c;
+    color: #ffffff;
+}
+
+.random-dialog {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    border-color: #20202c;
+    border-style: solid;
+    background-color: #10101c;
+    color: #ffffff;
+    position:fixed;
+    margin:0;
+    padding:0;
+    top:0;
+    left:0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.random-header {
+    color: #ffffff;
+    text-align: center;
+}
+
+.random-phrase-button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 100%; 
+    border-color: #20202c;
+    border-style: solid;
+    background-color: #10101c;
+    color: #ffffff;
+}
