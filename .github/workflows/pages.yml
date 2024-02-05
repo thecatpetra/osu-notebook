@@ -47,7 +47,7 @@ jobs:
       - name: Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: page
+          name: page2
           path: build
           if-no-files-found: error
 
